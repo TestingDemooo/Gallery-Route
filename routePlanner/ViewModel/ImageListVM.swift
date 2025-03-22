@@ -30,7 +30,7 @@ class ImageListVM {
             return
         }
 
-        let url = "\(API_BASE_URL)=\(ACCESS_KEY)&order_by=ORDER&per_page=30"
+        let url = "\(API_BASE_URL)=\(ACCESS_KEY)&per_page=30"
         
         debugPrint(url)
 
@@ -42,7 +42,7 @@ class ImageListVM {
                     self.imageList.append(contentsOf: item)
                     self.delegate?.successWithData(for: 200, index: 0, message: "")
                 }catch {
-                    self.delegate?.successWithData(for: 200, index: 0, message: error.localizedDescription)
+                    self.delegate?.successWithData(for: 201, index: 0, message: error.localizedDescription)
                 }
             }
         }
